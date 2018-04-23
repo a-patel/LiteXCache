@@ -6,7 +6,9 @@ Provide Cache service for any type of application (Asp.Net Core, .Net Standard 2
 
 ### nuget
 
-Run the nuget command for installing the client as `Install-Package LiteX.Cache`
+Run the nuget command for installing the client as,
+`Install-Package LiteX.Cache`
+`Install-Package LiteX.Cache.Redis`
 
 
 ## Usage
