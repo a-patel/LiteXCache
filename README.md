@@ -38,28 +38,21 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
-        // register per request cache service
-        services.AddScoped<ICacheManager, PerRequestCacheManager>();
-
-        // static cache manager (use one of below)
-
         #region In-Memory
 
-        // register static cache service (in-memory)
-        services.AddSingleton<IStaticCacheManager, MemoryCacheManager>();
+        services.AddLiteXCache(configuration);
 
         #endregion
 
         #region Redis Cache Configuration
 
-        // add redis configuration settings
-        services.AddSingleton(configuration.GetSection("RedisConfig").Get<RedisConfig>());
+        services.AddLiteXRedisCache(configuration);
 
-        // register redis configuration service
-        services.AddSingleton<IRedisConnectionWrapper, RedisConnectionWrapper>();
-
-        // register static cache service (redis)
-        services.AddSingleton<IStaticCacheManager, RedisCacheManager>();
+        // OR
+        // load configuration settings on your own.
+        // from appsettings, database, hardcoded etc.
+        var redisConfig = new RedisConfig();
+        services.AddLiteXRedisCache(configuration, redisConfig);
 
         #endregion
     }
