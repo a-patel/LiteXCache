@@ -89,10 +89,6 @@ public class CustomerController : Controller
     {
         _cacheManager = cacheManager;
         _staticCacheManager = staticCacheManager;
-
-        _emailSender = emailSender;
-
-        _blobService = blobService;
     }
 
     #endregion
