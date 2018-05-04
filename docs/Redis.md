@@ -39,16 +39,6 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
-        #region LiteX Caching
-
-        #region In-Memory
-
-        services.AddLiteXCache();
-
-        #endregion
-
-        #region Redis Cache Configuration
-
         // 1. Use default configuration from appsettings.json's 'RedisConfig'
         services.AddLiteXRedisCache(configuration);
 
@@ -62,10 +52,6 @@ public class Startup
         // (e.g. appsettings, database, hardcoded)
         var redisConfig = new RedisConfig();
         services.AddLiteXRedisCache(configuration, redisConfig);
-
-        #endregion
-
-        #endregion
     }
 
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
