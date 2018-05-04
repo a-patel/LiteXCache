@@ -3,18 +3,19 @@ LiteXCache is a caching library that contains basic usages and some advanced usa
 Provide Cache service for any type of application (Asp.Net Core, .Net Standard 2.x). Having a default implementation to wrap the MemoryCache and Redis Cache. 
 
 
-## Add a dependency
+## Basic Usage
 
-### Nuget
+
+### Install Nuget packages
 
 Run the nuget command for installing the client as,
 ```
+Install-Package LiteX.Cache.Core
 Install-Package LiteX.Cache
 Install-Package LiteX.Cache.Redis
 ```
 
-
-## Configuration
+### Configuration
 
 **AppSettings**
 ```js
@@ -75,9 +76,9 @@ public class Startup
 }
 ```
 
-## Usage
+### Use in Controller or Business layer
 
-**Controller or Business layer**
+```cs
 public class CustomerController : Controller
 {
     #region Fields
@@ -214,3 +215,28 @@ public class CustomerController : Controller
     #endregion
 }
 ```
+
+## Documentation
+
+For more helpful information about EasyCaching, please click [here](http://easycaching.readthedocs.io/en/latest/) for EasyCaching's documentation. 
+
+
+## Examples
+
+See [sample](https://comming.soon)
+
+
+## Todo List
+
+### Caching Providers
+
+- [x] InMemory
+- [x] Redis
+
+### Basic Caching API
+
+- [x] Get(with data retriever)
+- [x] Set
+- [x] Remove
+
+
