@@ -17,7 +17,7 @@ Install-Package LiteX.Cache.Redis
 
 ### Configuration
 
-**AppSettings**
+##### AppSettings
 ```js
 {
   "RedisConfig": {
@@ -27,7 +27,7 @@ Install-Package LiteX.Cache.Redis
 }
 ```
 
-**Startup Configuration**
+##### Startup Configuration
 ```cs
 public class Startup
 {
@@ -228,12 +228,12 @@ See [sample](https://comming.soon)
 
 ## Todo List
 
-### Caching Providers
+#### Caching Providers
 
 - [x] InMemory
 - [x] Redis
 
-### Basic Caching API
+#### Basic Caching API
 
 - [x] Get(with data retriever)
 - [x] Set
