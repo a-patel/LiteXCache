@@ -39,21 +39,31 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
+        #region LiteX Caching
+
         #region In-Memory
 
-        services.AddLiteXCache(configuration);
+        services.AddLiteXCache();
 
         #endregion
 
         #region Redis Cache Configuration
 
+        // 1. Use default configuration from appsettings.json's 'RedisConfig'
         services.AddLiteXRedisCache(configuration);
 
-        // OR
-        // load configuration settings on your own.
-        // from appsettings, database, hardcoded etc.
+        // 2. Load configuration settings using options.
+        services.AddLiteXRedisCache(option =>
+        {
+            option.RedisCachingConnectionString = "127.0.0.1:6379,ssl=False";
+        });
+
+        // 3. Load configuration settings on your own.
+        // (e.g. appsettings, database, hardcoded)
         var redisConfig = new RedisConfig();
         services.AddLiteXRedisCache(configuration, redisConfig);
+
+        #endregion
 
         #endregion
     }
@@ -68,16 +78,11 @@ public class Startup
 ## Usage
 
 **Controller or Business layer**
-```cs
-/// <summary>
-/// Customer controller
-/// </summary>
 public class CustomerController : Controller
 {
     #region Fields
 
-    private readonly ICacheManager _cacheManager;
-    private readonly IStaticCacheManager _staticCacheManager;
+    private readonly ILiteXCacheManager _cacheManager;
 
     #endregion
 
@@ -87,11 +92,9 @@ public class CustomerController : Controller
     /// Ctor
     /// </summary>
     /// <param name="cacheManager"></param>
-    /// <param name="staticCacheManager"></param>
-    public CustomerController(ICacheManager cacheManager, IStaticCacheManager staticCacheManager)
+    public CustomerController(ILiteXCacheManager cacheManager)
     {
         _cacheManager = cacheManager;
-        _staticCacheManager = staticCacheManager;
     }
 
     #endregion
@@ -109,7 +112,7 @@ public class CustomerController : Controller
         //cacheable key
         var key = "customers";
 
-        customers = _staticCacheManager.Get(key, () =>
+        customers = _cacheManager.Get(key, () =>
         {
             var result = new List<Customer>();
 
@@ -133,7 +136,7 @@ public class CustomerController : Controller
         //cacheable key
         var cacheKey = "customers";
 
-        customers = _staticCacheManager.Get(cacheKey, cacheTime, () =>
+        customers = _cacheManager.Get(cacheKey, cacheTime, () =>
         {
             var result = new List<Customer>();
 
