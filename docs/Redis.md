@@ -1,7 +1,7 @@
 # LiteX Redis Cache
 LiteX.Cache.Redis is a redis caching lib which is based on LiteX.Cache.Core and StackExchange.Redis.
 
-When you use this lib , it means that you will handle the data of your redis servers . As usual , we will use it as distributed caching .
+When you use this library, it means that you will handle the data of your redis servers. As usual, we will use it as distributed caching.
 
 ## How to use ?
 
