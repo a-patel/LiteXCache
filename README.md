@@ -1,6 +1,6 @@
 # LiteXCache
 LiteXCache is a caching library that contains basic usages and some advanced usages of caching which can help us to handle caching more easier!
-Provide Cache service for any type of application (Asp.Net Core, .Net Standard 2.x). Having a default implementation to wrap the MemoryCache and Redis Cache. 
+Provide Cache service for any type of application (Asp.Net Core, .Net Standard 2.x). Having a default implementation to wrap the MemoryCache, Redis Cache and Memcached Cache. 
 
 
 ## Basic Usage
@@ -13,6 +13,7 @@ Run the nuget command for installing the client as,
 Install-Package LiteX.Cache.Core
 Install-Package LiteX.Cache
 Install-Package LiteX.Cache.Redis
+Install-Package LiteX.Cache.Memcached
 ```
 
 ### Configuration
