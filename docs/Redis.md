@@ -40,18 +40,20 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         // 1. Use default configuration from appsettings.json's 'RedisConfig'
-        services.AddLiteXRedisCache(configuration);
+        services.AddLiteXRedisCache();
 
+        //OR
         // 2. Load configuration settings using options.
         services.AddLiteXRedisCache(option =>
         {
             option.RedisCachingConnectionString = "127.0.0.1:6379,ssl=False";
         });
 
+        //OR
         // 3. Load configuration settings on your own.
         // (e.g. appsettings, database, hardcoded)
         var redisConfig = new RedisConfig();
-        services.AddLiteXRedisCache(configuration, redisConfig);
+        services.AddLiteXRedisCache(redisConfig);
     }
 
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
