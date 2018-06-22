@@ -1,6 +1,19 @@
 # LiteXCache
-LiteXCache is a caching library that contains basic usages and some advanced usages of caching which can help us to handle caching more easier!
-Provide Cache service for any type of application (Asp.Net Core, .Net Standard 2.x). Having a default implementation to wrap the MemoryCache, Redis Cache and Memcached Cache. 
+LiteXCache is simple yet powerful and very high performance cache mechanism and incorporating both synchronous and asynchronous usage with some advanced usages of caching which can help us to handle caching more easier!
+
+Provide Cache service for any type of application (.NET Core, .Net Standard).
+
+Having a default/generic implementation to wrap the MemoryCache, Redis Cache, Memcached, SQLite, HTTP Request cache and independed on the underlying caching framework(s).
+
+Very simple and advanced configuration. Easily migrate or switch between one to another provider with no code breaking changes. Minimal (one line) code configuration is required.
+
+It supports various cache providers and implements many advanced features. You can also write your own and extend it also extend eaxting providers. 
+
+LiteXCache is an interface to unify the programming model for various cache providers.
+
+Better use of Http request cache for other external cache providers (Redis, Memcached, SQLite etc).
+
+The Core library contains all base interfaces and tools. One should install at least one other CacheManager package to get cache handle implementations.
 
 
 ## Basic Usage
