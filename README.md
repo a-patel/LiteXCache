@@ -15,6 +15,8 @@ Better use of Http request cache for other external cache providers (Redis, Memc
 
 The Core library contains all base interfaces and tools. One should install at least one other CacheManager package to get cache handle implementations.
 
+The main goal of the LiteXCache package is to make developer's life easier to handle even very complex caching scenarios.
+
 
 ## Basic Usage
 
