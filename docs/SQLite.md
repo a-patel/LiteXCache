@@ -1,5 +1,11 @@
 # LiteX SQLite Cache
-LiteX.Cache.SQLite is a redis caching lib which is based on LiteX.Cache.Core and SQLite DB.
+SQLite caching based on SQLite database. Small library for manage cache with SQLite. A quick setup for SQLite Caching.
+
+This package is simple yet powerful and very high performance cache mechanism and incorporating both synchronous and asynchronous usage with some advanced usages of caching which can help us to handle caching more easier!
+
+Provide Cache service for any type of application (.NET Core, .NET Standard).
+
+Very simple yet advanced configuration. The main goal of the LiteXCache package is to make developer's life easier to handle even very complex caching scenarios.
 
 
 ## How to use ?
