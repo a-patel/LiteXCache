@@ -5,7 +5,7 @@ Provide Cache service for any type of application (.NET Core, .NET Standard).
 
 Having a default/generic implementation to wrap the MemoryCache, Redis Cache, Memcached, SQLite, HTTP Request cache and independed on the underlying caching framework(s).
 
-Very simple and advanced configuration. Easily migrate or switch between one to another provider with no code breaking changes. Minimal (one line) code configuration is required.
+Very simple yet advanced configuration. Easily migrate or switch between one to another provider with no code breaking changes. Minimal (one line) code configuration is required.
 
 It supports various cache providers and implements many advanced features. You can also write your own and extend it also extend eaxting providers. 
 
@@ -13,7 +13,7 @@ LiteXCache is an interface to unify the programming model for various cache prov
 
 Better use of Http request cache for other external cache providers (Redis, Memcached, SQLite etc).
 
-The Core library contains all base interfaces and tools. One should install at least one other CacheManager package to get cache handle implementations.
+The Core library contains all base interfaces and tools. One should install at least one other LiateXCache package to get cache handle implementations.
 
 The main goal of the LiteXCache package is to make developer's life easier to handle even very complex caching scenarios.
 
