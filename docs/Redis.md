@@ -1,7 +1,7 @@
 # LiteX Redis Cache
-LiteX.Cache.Redis is a redis caching lib which is based on LiteX.Cache.Core and StackExchange.Redis.
+Distributed caching based on StackExchange.Redis and Redis. Small library for manage cache with Redis. A quick setup for Redis. LiteX.Cache.Redis is a redis caching library which is based on LiteX.Cache.Core and StackExchange.Redis.
 
-When you use this library, it means that you will handle the data of your redis servers. As usual, we will use it as distributed caching.
+When you use this library, it means that you will handle the data of your redis servers. As usual, you can use it as distributed caching.
 
 ## How to use ?
 
@@ -30,15 +30,10 @@ Install-Package LiteX.Cache.Redis
 ```cs
 public class Startup
 {
-    public IConfiguration configuration { get; }
-
-    public Startup(IConfiguration configuration)
-    {
-        this.configuration = configuration;
-    }
-
     public void ConfigureServices(IServiceCollection services)
     {
+        #region LiteX Caching (Redis)
+
         // 1. Use default configuration from appsettings.json's 'RedisConfig'
         services.AddLiteXRedisCache();
 
@@ -47,18 +42,20 @@ public class Startup
         services.AddLiteXRedisCache(option =>
         {
             option.RedisCachingConnectionString = "127.0.0.1:6379,ssl=False";
+            //option.PersistDataProtectionKeysToRedis = true;
         });
 
         //OR
         // 3. Load configuration settings on your own.
         // (e.g. appsettings, database, hardcoded)
-        var redisConfig = new RedisConfig();
+        var redisConfig = new RedisConfig()
+        {
+            RedisCachingConnectionString = "127.0.0.1:6379,ssl=False",
+            //PersistDataProtectionKeysToRedis = true
+        };
         services.AddLiteXRedisCache(redisConfig);
-    }
 
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-    {
-
+        #endregion
     }
 }
 ```
@@ -67,6 +64,10 @@ public class Startup
 The following code show how to use EasyCachingProvider in ASP.NET Core Web API.
 
 ```cs
+/// <summary>
+/// Customer controller
+/// </summary>
+[Route("api/[controller]")]
 public class CustomerController : Controller
 {
     #region Fields
@@ -91,9 +92,22 @@ public class CustomerController : Controller
     #region Methods
 
     /// <summary>
+    /// Get Cache Provider Type
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet]
+    [Route("get-cache-provider-type")]
+    public IActionResult GetCacheProviderType()
+    {
+        return Ok(_cacheManager.CacheProviderType.ToString());
+    }
+
+    /// <summary>
     /// Get a cached item. If it's not in the cache yet, then load and cache it
     /// </summary>
     /// <returns></returns>
+    [HttpGet]
+    [Route("cache-all")]
     public IActionResult CacheCustomers()
     {
         IList<Customer> customers;
@@ -104,11 +118,18 @@ public class CustomerController : Controller
         customers = _cacheManager.Get(key, () =>
         {
             var result = new List<Customer>();
-
             result = GetCustomers().ToList();
-
             return result;
         });
+
+
+        ////Async
+        //customers = await _cacheManager.GetAsync(key, () =>
+        //{
+        //    var result = new List<Customer>();
+        //    result = GetCustomers().ToList();
+        //    return result;
+        //});
 
         return Ok(customers);
     }
@@ -118,6 +139,8 @@ public class CustomerController : Controller
     /// </summary>
     /// <param name="cacheTime">Cache time in minutes (0 - do not cache)</param>
     /// <returns></returns>
+    [HttpGet]
+    [Route("cache-all-specific-time/{cacheTime}")]
     public IActionResult CacheCustomers(int cacheTime)
     {
         IList<Customer> customers;
@@ -128,11 +151,18 @@ public class CustomerController : Controller
         customers = _cacheManager.Get(cacheKey, cacheTime, () =>
         {
             var result = new List<Customer>();
-
             result = GetCustomers().ToList();
-
             return result;
         });
+
+
+        ////Async
+        //customers = await _cacheManager.GetAsync(cacheKey, cacheTime, () =>
+        //{
+        //    var result = new List<Customer>();
+        //    result = GetCustomers().ToList();
+        //    return result;
+        //});
 
         return Ok(customers);
     }
@@ -142,6 +172,8 @@ public class CustomerController : Controller
     /// </summary>
     /// <param name="customerId"></param>
     /// <returns></returns>
+    [HttpGet]
+    [Route("cache-single-customer/{customerId}")]
     public IActionResult CacheCustomer(int customerId)
     {
         Customer customer = null;
@@ -149,12 +181,18 @@ public class CustomerController : Controller
 
         customer = _cacheManager.Get<Customer>(cacheKey);
 
+        ////Async
+        //customer = await _cacheManager.GetAsync<Customer>(cacheKey);
+
         if (customer == default(Customer))
         {
             //no value in the cache yet
             //let's load customer and cache the result
             customer = GetCustomerById(customerId);
             _cacheManager.Set(cacheKey, customer, 60);
+
+            ////Async
+            //await _cacheManager.SetAsync(cacheKey, customer, 60);
         }
         return Ok(customer);
     }
@@ -163,6 +201,8 @@ public class CustomerController : Controller
     /// Remove cached item(s).
     /// </summary>
     /// <returns></returns>
+    [HttpDelete]
+    [Route("remove-all-cached")]
     public IActionResult RemoveCachedCustomers()
     {
         //cacheable key
@@ -170,10 +210,34 @@ public class CustomerController : Controller
 
         _cacheManager.Remove(cacheKey);
 
+        ////Async
+        //await _cacheManager.RemoveAsync(cacheKey);
+
+
         // OR
         var cacheKeyPattern = "customers-";
         // remove by pattern
         _cacheManager.RemoveByPattern(cacheKeyPattern);
+
+        ////Async
+        //await _cacheManager.RemoveByPatternAsync(cacheKeyPattern);
+
+
+        return Ok();
+    }
+
+    /// <summary>
+    /// Clear-Flush all cached item(s).
+    /// </summary>
+    /// <returns></returns>
+    [HttpDelete]
+    [Route("clear-cached")]
+    public IActionResult ClearCachedItems()
+    {
+        _cacheManager.Clear();
+
+        ////Async
+        //await _cacheManager.ClearAsync();
 
         return Ok();
     }
@@ -182,11 +246,14 @@ public class CustomerController : Controller
 
     #region Utilities
 
-    private IList<Customer> GetCustomers()
+    private IList<Customer> GetCustomers(int total = 1000)
     {
         IList<Customer> customers = new List<Customer>();
 
-        customers.Add(new Customer() { Id = 1, Username = "ashish", Email = "toaashishpatel@outlook.com" });
+        for (int i = 1; i < (total + 1); i++)
+        {
+            customers.Add(new Customer() { Id = i, Username = $"customer_{i}", Email = $"customer_{i}@example.com" });
+        }
 
         return customers;
     }
@@ -203,4 +270,8 @@ public class CustomerController : Controller
     #endregion
 }
 ```
+
+## Coming soon
+
+* Logging
 
