@@ -294,3 +294,6 @@ public class CustomerController : Controller
 }
 ```
 
+## Coming soon
+
+* Logging
