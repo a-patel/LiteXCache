@@ -2,6 +2,12 @@
 # LiteX Memcached Cache
 Distributed caching based on Memcached. Small library for manage cache with Memcached. A quick setup for Memcached. LiteX.Cache.Memcached is a Memcached caching library which is based on LiteX.Cache.Core and Memcached.
 
+This package is simple yet powerful and very high performance cache mechanism and incorporating both synchronous and asynchronous usage with some advanced usages of caching which can help us to handle caching more easier!
+
+Provide Cache service for any type of application (.NET Core, .NET Standard).
+
+Very simple yet advanced configuration. The main goal of the LiteXCache package is to make developer's life easier to handle even very complex caching scenarios.
+
 
 ## How to use ?
 
