@@ -32,8 +32,6 @@ public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
     {
-        #region LiteX Caching (Redis)
-
         // 1. Use default configuration from appsettings.json's 'RedisConfig'
         services.AddLiteXRedisCache();
 
@@ -54,8 +52,6 @@ public class Startup
             //PersistDataProtectionKeysToRedis = true
         };
         services.AddLiteXRedisCache(redisConfig);
-
-        #endregion
     }
 }
 ```
