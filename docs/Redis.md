@@ -3,6 +3,13 @@ Distributed caching based on StackExchange.Redis and Redis. Small library for ma
 
 When you use this library, it means that you will handle the data of your redis servers. As usual, you can use it as distributed caching.
 
+This package is simple yet powerful and very high performance cache mechanism and incorporating both synchronous and asynchronous usage with some advanced usages of caching which can help us to handle caching more easier!
+
+Provide Cache service for any type of application (.NET Core, .NET Standard).
+
+Very simple yet advanced configuration. The main goal of the LiteXCache package is to make developer's life easier to handle even very complex caching scenarios.
+
+
 ## How to use ?
 
 
