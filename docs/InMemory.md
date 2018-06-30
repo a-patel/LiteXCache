@@ -1,5 +1,5 @@
-# LiteX In-Memory Cache
-LiteX.Cache (InMemory) is a InMemory caching based on on LiteX.Cache.Core and Microsoft.Extensions.Caching.Memory. Small library for manage cache with InMemory. A quick setup for InMemory Caching.
+# LiteX InMemory Cache
+> LiteX.Cache (InMemory) is a InMemory caching based on on LiteX.Cache.Core and Microsoft.Extensions.Caching.Memory. Small library for manage cache with InMemory. A quick setup for InMemory Caching.
 
 When you use this library , it means that you will handle the memory of current server . As usual , we named it as local caching.
 
