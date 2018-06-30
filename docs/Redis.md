@@ -1,5 +1,5 @@
 # LiteX Redis Cache
-Distributed caching based on StackExchange.Redis and Redis. Small library for manage cache with Redis. A quick setup for Redis. LiteX.Cache.Redis is a redis caching library which is based on LiteX.Cache.Core and StackExchange.Redis.
+> Distributed caching based on StackExchange.Redis and Redis. Small library for manage cache with Redis. A quick setup for Redis. LiteX.Cache.Redis is a redis caching library which is based on LiteX.Cache.Core and StackExchange.Redis.
 
 When you use this library, it means that you will handle the data of your redis servers. As usual, you can use it as distributed caching.
 
@@ -28,7 +28,8 @@ Install-Package LiteX.Cache.Redis
 {
   "RedisConfig": {
     "RedisCachingConnectionString": "127.0.0.1:6379,ssl=False",
-    "PersistDataProtectionKeysToRedis": false
+    "PersistDataProtectionKeysToRedis": false,
+    "EnableLogging": true
   }
 }
 ```
