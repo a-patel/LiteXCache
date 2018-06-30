@@ -416,4 +416,12 @@ public class CustomerController : Controller
 - [x] Clear
 
 
+## Authors
+
+* **Ashish Patel** - [A-Patel](https://github.com/a-patel)
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
