@@ -55,7 +55,7 @@ PM> Install-Package LiteX.Cache.SQLite
 Different types of caching provider have their own way to config.
 Here are samples that show you how to config.
 
-##### 2.1 : AppSettings
+##### 2.1 : AppSettings 🔨 
 ```js
 {  
   //LiteX Redis Cache settings
@@ -421,7 +421,7 @@ public class CustomerController : Controller
 
 #### Basic Caching API
 
-- [x] Get(with data retriever)
+- [x] Get (with data retriever)
 - [x] Set
 - [x] Remove
 - [x] Clear
