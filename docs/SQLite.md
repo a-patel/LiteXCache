@@ -13,7 +13,7 @@ Very simple yet advanced configuration. The main goal of the LiteXCache package 
 
 ### Install the package :package:
 
-> Install via [Nuget](https://www.nuget.org/packages/LiteX.Cache.Redis/).
+> Install via [Nuget](https://www.nuget.org/packages/LiteX.Cache.SQLite/).
 
 ```Powershell
 PM> Install-Package LiteX.Cache.SQLite
