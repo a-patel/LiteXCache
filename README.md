@@ -40,9 +40,11 @@ PM> Install-Package LiteX.Cache.Memcached
 PM> Install-Package LiteX.Cache.SQLite
 ```
 
-### Configuration
+### Step 2 : Configuration
+Different types of caching provider have their own way to config.
+Here are samples that show you how to config.
 
-##### AppSettings
+##### Step 2.1 AppSettings
 ```js
 {  
   //LiteX Redis Cache settings
@@ -64,7 +66,7 @@ PM> Install-Package LiteX.Cache.SQLite
 }
 ```
 
-##### Startup Configuration
+##### Step 2.2 Configure Startup Class
 ```cs
 public class Startup
 {
@@ -186,7 +188,7 @@ public class Startup
 }
 ```
 
-### Use in Controller or Business layer
+### Step 3 : Use in Controller or Business layer
 
 ```cs
 /// <summary>
