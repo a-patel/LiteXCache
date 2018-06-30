@@ -448,7 +448,7 @@ public class CustomerController : Controller
 * **Ashish Patel** - [A-Patel](https://github.com/a-patel)
 
 
-##### Follow me on
+##### Connect with me
 
 | Linkedin | GitHub | Facebook | Twitter | Instagram | Tumblr | Website |
 |----------|----------|----------|----------|----------|----------|----------|
