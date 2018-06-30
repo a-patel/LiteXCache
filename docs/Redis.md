@@ -64,8 +64,8 @@ public class Startup
 }
 ```
 
-### Sample Usage Example  :blue_book:
+### Sample Usage Example :notebook:
 > Same for all providers. 
 
-For more helpful information about LiteX Caching, Please click [here](https://github.com/a-patel/LiteXCache/blob/master/README.md#step-3--use-in-controller-or-business-layer)
+For more helpful information about LiteX Caching, Please click [here.](https://github.com/a-patel/LiteXCache/blob/master/README.md#step-3--use-in-controller-or-business-layer)
 
