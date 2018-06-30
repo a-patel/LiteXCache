@@ -9,10 +9,10 @@ Provide Cache service for any type of application (.NET Core, .NET Standard).
 Very simple yet advanced configuration. The main goal of the LiteXCache package is to make developer's life easier to handle even very complex caching scenarios.
 
 
-## Basic Usage :page_facing_up:
+## Basic Usage
 
 
-### Install the package :package:
+### Install the package
 
 > Install via [Nuget](https://www.nuget.org/packages/LiteX.Cache.Memcached/).
 
@@ -20,7 +20,7 @@ Very simple yet advanced configuration. The main goal of the LiteXCache package 
 PM> Install-Package LiteX.Cache.Memcached
 ```
 
-##### AppSettings 🔨
+##### AppSettings
 ```js
 {  
   //LiteX Memcached Cache settings (don't use this option)
@@ -80,7 +80,7 @@ public class Startup
 }
 ```
 
-### Sample Usage Example :notebook:
+### Sample Usage Example
 > Same for all providers. 
 
 For more helpful information about LiteX Caching, Please click [here.](https://github.com/a-patel/LiteXCache/blob/master/README.md#step-3--use-in-controller-or-business-layer-memo)
