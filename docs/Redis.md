@@ -10,22 +10,21 @@ Provide Cache service for any type of application (.NET Core, .NET Standard).
 Very simple yet advanced configuration. The main goal of the LiteXCache package is to make developer's life easier to handle even very complex caching scenarios.
 
 
-## How to use ?
+## Basic Usage :page_facing_up:
 
 
-### Install Nuget packages
+### Install the package :package:
 
-Run the nuget command for installing the client as,
+> Install via [Nuget](https://www.nuget.org/packages/LiteX.Cache.Redis/).
+
+```Powershell
+PM> Install-Package LiteX.Cache.Redis
 ```
-Install-Package LiteX.Cache.Core
-Install-Package LiteX.Cache.Redis
-```
 
-### Configuration
-
-##### AppSettings
+##### AppSettings 🔨
 ```js
-{
+{  
+  //LiteX Redis Cache settings
   "RedisConfig": {
     "RedisCachingConnectionString": "127.0.0.1:6379,ssl=False",
     "PersistDataProtectionKeysToRedis": false,
@@ -34,7 +33,7 @@ Install-Package LiteX.Cache.Redis
 }
 ```
 
-##### Startup Configuration
+##### Configure Startup Class
 ```cs
 public class Startup
 {
@@ -48,7 +47,7 @@ public class Startup
         services.AddLiteXRedisCache(option =>
         {
             option.RedisCachingConnectionString = "127.0.0.1:6379,ssl=False";
-            //option.PersistDataProtectionKeysToRedis = true;
+            option.EnableLogging = false;
         });
 
         //OR
@@ -57,7 +56,7 @@ public class Startup
         var redisConfig = new RedisConfig()
         {
             RedisCachingConnectionString = "127.0.0.1:6379,ssl=False",
-            //PersistDataProtectionKeysToRedis = true
+            EnableLogging = false,
         };
         services.AddLiteXRedisCache(redisConfig);
     }
