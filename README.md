@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="litex.png" width="100px" />
-</p>
-
 # LiteXCache
 > LiteXCache is simple yet powerful and very high performance cache mechanism and incorporating both synchronous and asynchronous usage with some advanced usages of caching which can help us to handle caching more easier!
 
