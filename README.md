@@ -444,9 +444,7 @@ public class CustomerController : Controller
 
 ## Donations
 
-- You could include a <a href="https://www.buymeacoffee.com/iamaashishpatel" target="_blank">BMC</a> link as well.
-
-[![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png)]()
+[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/iamaashishpatel)
 
 
 
