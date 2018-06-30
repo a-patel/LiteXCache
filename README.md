@@ -65,18 +65,21 @@ PM> Install-Package LiteX.Cache.SQLite
   //LiteX Redis Cache settings
   "RedisConfig": {
     "RedisCachingConnectionString": "127.0.0.1:6379,ssl=False",
-    "PersistDataProtectionKeysToRedis": false
+    "PersistDataProtectionKeysToRedis": false,
+    "EnableLogging": true
   },
 
   //LiteX Memcached Cache settings
   "MemcachedConfig": {
-    "PersistDataProtectionKeysToMemcached": false
+    "PersistDataProtectionKeysToMemcached": false,
+    "EnableLogging": true
   },
 
   //LiteX SQLite Config settings (Optional)
   "SQLiteConfig": {
     "FilePath": "",
-    "FileName": ""
+    "FileName": "",
+    "EnableLogging": true
   }
 }
 ```
