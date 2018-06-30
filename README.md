@@ -18,7 +18,7 @@ The Core library contains all base interfaces and tools. One should install at l
 The main goal of the LiteXCache package is to make developer's life easier to handle even very complex caching scenarios.
 
 
-## Cache Providers
+## Cache Providers :books:
 - [Redis](docs/Redis.md)
 - [InMemory](docs/In-Memory.md)
 - [SQLite](docs/SQLite.md)
@@ -26,7 +26,7 @@ The main goal of the LiteXCache package is to make developer's life easier to ha
 
 
 
-## Features
+## Features :pager:
 - Cache any type of data
 - Cache data for spefic time
 - Distibuted Cache
@@ -42,7 +42,7 @@ The main goal of the LiteXCache package is to make developer's life easier to ha
 
 
 
-## Basic Usage
+## Basic Usage :page_facing_up:
 
 
 ### Step 1 : Install the package :package:
@@ -57,11 +57,11 @@ PM> Install-Package LiteX.Cache.Memcached
 PM> Install-Package LiteX.Cache.SQLite
 ```
 
-### Step 2 : Configuration
+### Step 2 : Configuration 🔨 
 > Different types of caching provider have their own way to config.
 > Here are samples that show you how to config.
 
-##### 2.1 : AppSettings 🔨 
+##### 2.1 : AppSettings 
 ```js
 {  
   //LiteX Redis Cache settings
@@ -208,7 +208,7 @@ public class Startup
 }
 ```
 
-### Step 3 : Use in Controller or Business layer
+### Step 3 : Use in Controller or Business layer :memo:
 
 ```cs
 /// <summary>
@@ -419,7 +419,7 @@ public class CustomerController : Controller
 ```
 
 
-## Todo List
+## Todo List :clipboard:
 
 #### Caching Providers
 
@@ -440,15 +440,15 @@ public class CustomerController : Controller
 
 
 
-## Support
+## Support :telephone:
 > Reach out to me at one of the following places!
 
 - Email :envelope: at <a href="mailto:toaashishpatel@gmail.com" target="_blank">`toaashishpatel@gmail.com`</a>
-- NuGet at <a href="https://www.nuget.org/profiles/iamaashishpatel" target="_blank">`@iamaashishpatel`</a>
+- NuGet :package: at <a href="https://www.nuget.org/profiles/iamaashishpatel" target="_blank">`@iamaashishpatel`</a>
 
 
 
-## Authors
+## Authors :boy:
 
 * **Ashish Patel** - [A-Patel](https://github.com/a-patel)
 
