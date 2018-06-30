@@ -20,7 +20,7 @@ The main goal of the LiteXCache package is to make developer's life easier to ha
 
 ## Cache Providers :books:
 - [Redis](docs/Redis.md)
-- [InMemory](docs/In-Memory.md)
+- [InMemory](docs/InMemory.md)
 - [SQLite](docs/SQLite.md)
 - [Memcached](docs/Memcached.md)
 
@@ -92,9 +92,26 @@ public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
     {
-        #region LiteX Caching (In-Memory)
+        #region LiteX Caching (InMemory)
 
+        // 1. Use default configuration from appsettings.json's 'InMemoryConfig'
         services.AddLiteXCache();
+
+        //OR
+        // 2. Load configuration settings using options.
+        services.AddLiteXRedisCache(option =>
+        {
+            option.EnableLogging = false;
+        });
+
+        //OR
+        // 3. Load configuration settings on your own.
+        // (e.g. appsettings, database, hardcoded)
+        var inMemoryConfig = new InMemoryConfig()
+        {
+            EnableLogging = false,
+        };
+        services.AddLiteXCache(inMemoryConfig);
 
         #endregion
 
@@ -109,6 +126,7 @@ public class Startup
         {
             option.RedisCachingConnectionString = "127.0.0.1:6379,ssl=False";
             //option.PersistDataProtectionKeysToRedis = true;
+            option.EnableLogging = false;
         });
 
         //OR
@@ -118,6 +136,7 @@ public class Startup
         {
             RedisCachingConnectionString = "127.0.0.1:6379,ssl=False",
             //PersistDataProtectionKeysToRedis = true
+            EnableLogging = false,
         };
         services.AddLiteXRedisCache(redisConfig);
 
@@ -137,6 +156,7 @@ public class Startup
             option.FilePath = "";
             option.OpenMode = Microsoft.Data.Sqlite.SqliteOpenMode.ReadWriteCreate;
             option.CacheMode = Microsoft.Data.Sqlite.SqliteCacheMode.Default;
+            option.EnableLogging = false;
         });
 
         //OR
@@ -147,7 +167,8 @@ public class Startup
             FileName = "",
             FilePath = "",
             OpenMode = Microsoft.Data.Sqlite.SqliteOpenMode.ReadWriteCreate,
-            CacheMode = Microsoft.Data.Sqlite.SqliteCacheMode.Default
+            CacheMode = Microsoft.Data.Sqlite.SqliteCacheMode.Default,
+            EnableLogging = false,
         };
         services.AddLiteXSQLiteCache(sqLiteConfig);
 
@@ -176,6 +197,7 @@ public class Startup
         }, option =>
         {
             option.PersistDataProtectionKeysToMemcached = true;
+            option.EnableLogging = false;
         });
 
         //OR
@@ -183,8 +205,8 @@ public class Startup
         // (e.g. appsettings, database, hardcoded)
         var memcachedConfig = new MemcachedConfig()
         {
-            PersistDataProtectionKeysToMemcached = true
-
+            PersistDataProtectionKeysToMemcached = true,
+            EnableLogging = false,
         };
         services.AddLiteXMemcachedCache(providerOption =>
         {
@@ -197,7 +219,7 @@ public class Startup
         #endregion
     }
 
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
     {
         //Memcached
         app.UseLiteXMemcachedCache();
