@@ -45,7 +45,7 @@ The main goal of the LiteXCache package is to make developer's life easier to ha
 ## Basic Usage
 
 
-### Step 1 : Install the package
+### Step 1 : Install the package :package:
 
 > Choose one kinds of caching type that you needs and install it via [Nuget](https://www.nuget.org/profiles/iamaashishpatel).
 > To install LiteXCache, run the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
@@ -443,7 +443,7 @@ public class CustomerController : Controller
 ## Support
 > Reach out to me at one of the following places!
 
-- Email at <a href="mailto:toaashishpatel@gmail.com" target="_blank">`toaashishpatel@gmail.com`</a>
+- Email :envelope: at <a href="mailto:toaashishpatel@gmail.com" target="_blank">`toaashishpatel@gmail.com`</a>
 - NuGet at <a href="https://www.nuget.org/profiles/iamaashishpatel" target="_blank">`@iamaashishpatel`</a>
 
 
@@ -462,13 +462,13 @@ public class CustomerController : Controller
 
 
 
-## Donations
+## Donations :dollar:
 
 [![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/iamaashishpatel)
 
 
 
-## License
+## License :lock:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
