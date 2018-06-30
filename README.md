@@ -27,15 +27,14 @@ The main goal of the LiteXCache package is to make developer's life easier to ha
 ## Basic Usage
 
 
-### Install Nuget packages
+### Step 1 : Install the package
 
-Run the nuget command for installing the client as,
-```
-Install-Package LiteX.Cache.Core
-Install-Package LiteX.Cache
-Install-Package LiteX.Cache.Redis
-Install-Package LiteX.Cache.Memcached
-Install-Package LiteX.Cache.SQLite
+Choose one kinds of caching type that you needs and install it via Nuget.
+```Powershell
+PM> Install-Package LiteX.Cache
+PM> Install-Package LiteX.Cache.Redis
+PM> Install-Package LiteX.Cache.Memcached
+PM> Install-Package LiteX.Cache.SQLite
 ```
 
 ### Configuration
