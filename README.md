@@ -28,7 +28,7 @@ The main goal of the LiteXCache package is to make developer's life easier to ha
 
 ## Features
 - Cache any type of data
-- Cache for spefic time data
+- Cache data for spefic time
 - Distibuted Cache
 - Async support
 - Cache Removal and Flush support
