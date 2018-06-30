@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="icon.png" width="100px" />
+</p>
+
 # LiteXCache
 > LiteXCache is simple yet powerful and very high performance cache mechanism and incorporating both synchronous and asynchronous usage with some advanced usages of caching which can help us to handle caching more easier!
 
@@ -425,6 +429,25 @@ public class CustomerController : Controller
 - [x] Set
 - [x] Remove
 - [x] Clear
+
+
+
+## Support
+> Reach out to me at one of the following places!
+
+- Linkedin at <a href="https://www.linkedin.com/in/iamaashishpatel" target="_blank">`@iamaashishpatel`</a>
+- Twitter at <a href="http://twitter.com/aashish_mrcool" target="_blank">`@aashish_mrcool`</a>
+
+---
+
+
+
+## Donations
+
+- You could include a <a href="https://www.buymeacoffee.com/iamaashishpatel" target="_blank">BMC</a> link as well.
+
+[![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png)]()
+
 
 
 ## Authors
