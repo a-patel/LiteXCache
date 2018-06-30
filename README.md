@@ -17,6 +17,7 @@ The Core library contains all base interfaces and tools. One should install at l
 
 The main goal of the LiteXCache package is to make developer's life easier to handle even very complex caching scenarios.
 
+
 ## Cache Providers
 - [Redis](https://github.com/a-patel/LiteXCache/blob/master/docs/Redis.md)
 - [InMemory](https://github.com/a-patel/LiteXCache/blob/master/docs/In-Memory.md)
@@ -29,7 +30,9 @@ The main goal of the LiteXCache package is to make developer's life easier to ha
 
 ### Step 1 : Install the package
 
-Choose one kinds of caching type that you needs and install it via Nuget.
+Choose one kinds of caching type that you needs and install it via [Nuget](https://www.nuget.org/profiles/iamaashishpatel).
+To install LiteXCache, run the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
+
 ```Powershell
 PM> Install-Package LiteX.Cache
 PM> Install-Package LiteX.Cache.Redis
