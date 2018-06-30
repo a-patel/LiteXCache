@@ -17,6 +17,12 @@ The Core library contains all base interfaces and tools. One should install at l
 
 The main goal of the LiteXCache package is to make developer's life easier to handle even very complex caching scenarios.
 
+## Cache Providers
+- [Redis](https://github.com/a-patel/LiteXCache/blob/master/docs/Redis.md)
+- [InMemory](https://github.com/a-patel/LiteXCache/blob/master/docs/In-Memory.md)
+- [SQLite](https://github.com/a-patel/LiteXCache/blob/master/docs/SQLite.md)
+- [Memcached](https://github.com/a-patel/LiteXCache/blob/master/docs/Memcached.md)
+
 
 ## Basic Usage
 
