@@ -28,7 +28,7 @@ Better use of Http request cache for other external cache providers (Redis, Memc
 
 ## Features :pager:
 - Cache any type of data
-- Cache data for spefic time
+- Cache data for specific time
 - Distributed Cache
 - Async compatible
 - Cache Removal and Flush support
