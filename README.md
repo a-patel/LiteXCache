@@ -1,7 +1,7 @@
 # LiteXCache
-LiteXCache is simple yet powerful and very high performance cache mechanism and incorporating both synchronous and asynchronous usage with some advanced usages of caching which can help us to handle caching more easier!
+> LiteXCache is simple yet powerful and very high performance cache mechanism and incorporating both synchronous and asynchronous usage with some advanced usages of caching which can help us to handle caching more easier!
 
-Provide Cache service for any type of application (.NET Core, .NET Standard).
+> Provide Cache service for any type of application (.NET Core, .NET Standard).
 
 Having a default/generic implementation to wrap the MemoryCache, Redis Cache, Memcached, SQLite, HTTP Request cache and independed on the underlying caching framework(s).
 
