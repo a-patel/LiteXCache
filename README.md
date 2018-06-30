@@ -34,9 +34,15 @@ The main goal of the LiteXCache package is to make developer's life easier to ha
 - Cache any type of data
 - Cache data for spefic time
 - Distibuted Cache
-- Async support
+- Async compatible
 - Cache Removal and Flush support
 - Many other features
+- Simple API with familiar sliding or absolute expiration
+- Guaranteed single evaluation of your factory delegate whose results you want to cache
+- Strongly typed generics based API. No need to cast your cached objects every time you retieve them
+- Thread safe, concurrency ready
+- Interface based API to support test driven development and dependency injection
+- Leverages a provider model on top of ILiteXCacheManager under the hood and can be extended with your own implementation
 
 
 
