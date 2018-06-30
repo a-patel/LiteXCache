@@ -19,6 +19,7 @@ The main goal of the LiteXCache package is to make developer's life easier to ha
 
 
 ## Cache Providers
+- [Redis](docs/Redis.md)
 - [Redis](https://github.com/a-patel/LiteXCache/blob/master/docs/Redis.md)
 - [InMemory](https://github.com/a-patel/LiteXCache/blob/master/docs/In-Memory.md)
 - [SQLite](https://github.com/a-patel/LiteXCache/blob/master/docs/SQLite.md)
