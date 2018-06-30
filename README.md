@@ -63,17 +63,20 @@ PM> Install-Package LiteX.Cache.SQLite
 
 ##### 2.1 : AppSettings 
 ```js
-{  
+{
+  //LiteX InMemory Cache settings (Optional)
+  "InMemoryConfig": {
+    "EnableLogging": true
+  },
+  
   //LiteX Redis Cache settings
   "RedisConfig": {
     "RedisCachingConnectionString": "127.0.0.1:6379,ssl=False",
-    "PersistDataProtectionKeysToRedis": false,
     "EnableLogging": true
   },
 
-  //LiteX Memcached Cache settings
+  //LiteX Memcached Cache settings (don't use this option)
   "MemcachedConfig": {
-    "PersistDataProtectionKeysToMemcached": false,
     "EnableLogging": true
   },
 
