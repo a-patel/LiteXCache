@@ -3,19 +3,19 @@
 
 > Provide Cache service for any type of application (.NET Core, .NET Standard).
 
-Having a default/generic implementation to wrap the MemoryCache, Redis Cache, Memcached, SQLite, HTTP Request cache and independed on the underlying caching framework(s).
+Having a default/generic implementation to wrap the MemoryCache, Redis Cache, Memcached, SQLite, HTTP Request cache and independent on the underlying caching framework(s).
 
 Very simple yet advanced configuration. Easily migrate or switch between one to another provider with no code breaking changes. Minimal (one line) code configuration is required.
 
-It supports various cache providers and implements many advanced features. You can also write your own and extend it also extend eaxting providers. 
+It supports various cache providers and implements many advanced features. You can also write your own and extend it also extend existing providers. 
 
 LiteXCache is an interface to unify the programming model for various cache providers.
-
-Better use of Http request cache for other external cache providers (Redis, Memcached, SQLite etc).
 
 The Core library contains all base interfaces and tools. One should install at least one other LiateXCache package to get cache handle implementations.
 
 The main goal of the LiteXCache package is to make developer's life easier to handle even very complex caching scenarios.
+
+Better use of Http request cache for other external cache providers (Redis, Memcached, SQLite etc).
 
 
 ## Cache Providers :books:
@@ -29,15 +29,15 @@ The main goal of the LiteXCache package is to make developer's life easier to ha
 ## Features :pager:
 - Cache any type of data
 - Cache data for spefic time
-- Distibuted Cache
+- Distributed Cache
 - Async compatible
 - Cache Removal and Flush support
 - Many other features
 - Simple API with familiar sliding or absolute expiration
 - Guaranteed single evaluation of your factory delegate whose results you want to cache
-- Strongly typed generics based API. No need to cast your cached objects every time you retieve them
+- Strongly typed generics based API. No need to cast your cached objects every time you retrieve them
 - Thread safe, concurrency ready
-- Interface based API to support test driven development and dependency injection
+- Interface based API to support the test driven development and dependency injection
 - Leverages a provider model on top of ILiteXCacheManager under the hood and can be extended with your own implementation
 
 
