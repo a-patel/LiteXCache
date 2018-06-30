@@ -180,6 +180,7 @@ public class Startup
 
         #region LiteX Caching (Memcached)
 
+        // don't use this option
         // 1. Use default configuration from appsettings.json's 'MemcachedConfig'
         services.AddLiteXMemcachedCache(providerOption =>
         {
