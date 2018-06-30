@@ -25,6 +25,17 @@ The main goal of the LiteXCache package is to make developer's life easier to ha
 - [Memcached](docs/Memcached.md)
 
 
+
+## Features
+- Cache any type of data
+- Cache for spefic time data
+- Distibuted Cache
+- Async support
+- Cache Removal and Flush support
+- Many other features
+
+
+
 ## Basic Usage
 
 
