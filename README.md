@@ -41,8 +41,8 @@ The main goal of the LiteXCache package is to make developer's life easier to ha
 
 ### Step 1 : Install the package
 
-Choose one kinds of caching type that you needs and install it via [Nuget](https://www.nuget.org/profiles/iamaashishpatel).
-To install LiteXCache, run the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
+> Choose one kinds of caching type that you needs and install it via [Nuget](https://www.nuget.org/profiles/iamaashishpatel).
+> To install LiteXCache, run the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
 
 ```Powershell
 PM> Install-Package LiteX.Cache
@@ -52,8 +52,8 @@ PM> Install-Package LiteX.Cache.SQLite
 ```
 
 ### Step 2 : Configuration
-Different types of caching provider have their own way to config.
-Here are samples that show you how to config.
+> Different types of caching provider have their own way to config.
+> Here are samples that show you how to config.
 
 ##### 2.1 : AppSettings 🔨 
 ```js
