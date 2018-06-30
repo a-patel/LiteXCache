@@ -431,14 +431,14 @@ public class CustomerController : Controller
 - [x] Clear
 
 
+---
+
 
 ## Support
 > Reach out to me at one of the following places!
 
 - Linkedin at <a href="https://www.linkedin.com/in/iamaashishpatel" target="_blank">`@iamaashishpatel`</a>
 - Twitter at <a href="http://twitter.com/aashish_mrcool" target="_blank">`@aashish_mrcool`</a>
-
----
 
 
 
