@@ -64,7 +64,8 @@ public class Startup
 }
 ```
 
-### Usage Example
-> Same for all providers
+### Sample Usage Example
+> Same for all providers. 
 
+For more helpful information about LiteX Caching, Please click [here](https://github.com/a-patel/LiteXCache/blob/master/README.md#step-3--use-in-controller-or-business-layer)
 
