@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icon.png" width="100px" />
+  <img src="litex.png" width="100px" />
 </p>
 
 # LiteXCache
