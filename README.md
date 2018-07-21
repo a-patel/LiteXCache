@@ -18,7 +18,6 @@ The main goal of the LiteXCache package is to make developer's life easier to ha
 Better use of Http request cache for other external cache providers (Redis, Memcached, SQLite etc).
 
 
-
 ## Cache Providers :books:
 - [Redis](docs/Redis.md)
 - [InMemory](docs/InMemory.md)
