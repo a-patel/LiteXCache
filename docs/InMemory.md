@@ -3,7 +3,7 @@
 
 > Wrapper library is just written for the purpose to bring a new level of ease to the developers who deal with InMemory Cache integration with your system.
 
-When you use this library , it means that you will handle the memory of current server . As usual , we named it as local caching.
+When you use this library , it means that you will handle the memory of current server . As usual, we named it as local caching.
 
 This package is simple yet powerful and very high performance cache mechanism and incorporating both synchronous and asynchronous usage with some advanced usages of caching which can help us to handle caching more easier!
 
