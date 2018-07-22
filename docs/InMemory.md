@@ -7,6 +7,8 @@ Small library to abstract caching mechanism to InMemory Cache. Quick setup for I
 
 Very simple configuration in advanced ways. Purpose of this package is to bring a new level of ease to the developers who deal with InMemory Cache integration with their system.
 
+Note: When you use this library, it means that you will handle the memory of current server.
+
 
 
 ## Basic Usage
