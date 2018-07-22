@@ -1,13 +1,11 @@
 # LiteX Redis Cache
-> Distributed caching based on StackExchange.Redis and Redis. Small library for manage cache with Redis. A quick setup for Redis. LiteX.Cache.Redis is a redis caching library which is based on LiteX.Cache.Core and StackExchange.Redis.
+> Distributed caching based on StackExchange.Redis and Redis.
 
-When you use this library, it means that you will handle the data of your redis servers. As usual, you can use it as distributed caching.
+This client library enables working with the Redis Cache for caching any type of data.
 
-This package is simple yet powerful and very high performance cache mechanism and incorporating both synchronous and asynchronous usage with some advanced usages of caching which can help us to handle caching more easier!
+Small library to abstract caching mechanism to Redis Cache. Quick setup for Redis Cache and very simple wrapper for the Redis Cache.
 
-Provide Cache service for any type of application (.NET Core, .NET Standard).
-
-Very simple yet advanced configuration. The main goal of the LiteXCache package is to make developer's life easier to handle even very complex caching scenarios.
+Very simple configuration in advanced ways. Purpose of this package is to bring a new level of ease to the developers who deal with Redis Cache integration with their system.
 
 
 ## Basic Usage
