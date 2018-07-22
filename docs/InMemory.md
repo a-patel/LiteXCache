@@ -1,7 +1,7 @@
 # LiteX InMemory Cache
 > LiteX.Cache is a InMemory caching based on on LiteX.Cache.Core and Microsoft.Extensions.Caching.Memory. Small library for manage cache with InMemory. A quick setup for InMemory Caching.
 
-> Wrapper library is just written for the purpose to bring a new level of ease to the developers who deal with InMemory Cache integration with your system.
+Wrapper library is just written for the purpose to bring a new level of ease to the developers who deal with InMemory Cache integration with your system.
 
 Provide Cache service for ASP.NET Core (2.0 and later) application.
 
