@@ -9,7 +9,7 @@ This package is simple yet powerful and very high performance cache mechanism an
 
 Very simple and advanced configuration. The main goal of the this package is to make developer's life easier to handle even very complex caching scenarios.
 
-When you use this library, it means that you will handle the memory of current server. As usual, we named it as local caching.
+When you use this library, it means that you will handle the memory of current server. As usual, I named it as local caching.
 
 
 
