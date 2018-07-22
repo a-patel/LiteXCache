@@ -44,7 +44,7 @@ public class Startup
 
         //OR
         // 2. Load configuration settings using options.
-        services.AddLiteXRedisCache(option =>
+        services.AddLiteXCache(option =>
         {
             option.EnableLogging = false;
         });
