@@ -3,13 +3,14 @@
 
 > Wrapper library is just written for the purpose to bring a new level of ease to the developers who deal with InMemory Cache integration with your system.
 
-When you use this library , it means that you will handle the memory of current server . As usual, we named it as local caching.
+Provide Cache service for ASP.NET Core (2.0 and later) application.
 
 This package is simple yet powerful and very high performance cache mechanism and incorporating both synchronous and asynchronous usage with some advanced usages of caching which can help us to handle caching more easier!
 
-Provide Cache service for any type of application (.NET Core, .NET Standard).
+Very simple and advanced configuration. The main goal of the this package is to make developer's life easier to handle even very complex caching scenarios.
 
-Very simple yet advanced configuration. The main goal of the LiteXCache package is to make developer's life easier to handle even very complex caching scenarios.
+When you use this library, it means that you will handle the memory of current server. As usual, we named it as local caching.
+
 
 
 ## Basic Usage
