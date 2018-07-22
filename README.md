@@ -282,23 +282,22 @@ public class CustomerController : Controller
     /// <returns></returns>
     [HttpGet]
     [Route("cache-all")]
-    public IActionResult CacheCustomers()
+    public async Task<IActionResult> CacheCustomers()
     {
         IList<Customer> customers;
 
         //cacheable key
         var key = "customers";
 
-        customers = _cacheManager.Get(key, () =>
+        customers = await _cacheManager.GetAsync(key, () =>
         {
             var result = new List<Customer>();
             result = GetCustomers().ToList();
             return result;
         });
 
-
-        ////Async
-        //customers = await _cacheManager.GetAsync(key, () =>
+        //// sync
+        //customers = _cacheManager.Get(key, () =>
         //{
         //    var result = new List<Customer>();
         //    result = GetCustomers().ToList();
@@ -315,23 +314,22 @@ public class CustomerController : Controller
     /// <returns></returns>
     [HttpGet]
     [Route("cache-all-specific-time/{cacheTime}")]
-    public IActionResult CacheCustomers(int cacheTime)
+    public async Task<IActionResult> CacheCustomers(int cacheTime)
     {
         IList<Customer> customers;
 
         //cacheable key
         var cacheKey = "customers";
 
-        customers = _cacheManager.Get(cacheKey, cacheTime, () =>
+        customers = await _cacheManager.GetAsync(cacheKey, cacheTime, () =>
         {
             var result = new List<Customer>();
             result = GetCustomers().ToList();
             return result;
         });
 
-
-        ////Async
-        //customers = await _cacheManager.GetAsync(cacheKey, cacheTime, () =>
+        //// sync
+        //customers = _cacheManager.Get(cacheKey, cacheTime, () =>
         //{
         //    var result = new List<Customer>();
         //    result = GetCustomers().ToList();
@@ -348,26 +346,28 @@ public class CustomerController : Controller
     /// <returns></returns>
     [HttpGet]
     [Route("cache-single-customer/{customerId}")]
-    public IActionResult CacheCustomer(int customerId)
+    public async Task<IActionResult> CacheCustomer(int customerId)
     {
         Customer customer = null;
         var cacheKey = $"customer-{customerId}";
 
-        customer = _cacheManager.Get<Customer>(cacheKey);
+        customer = await _cacheManager.GetAsync<Customer>(cacheKey);
 
-        ////Async
-        //customer = await _cacheManager.GetAsync<Customer>(cacheKey);
+        //// sync
+        //customer = _cacheManager.Get<Customer>(cacheKey);
 
         if (customer == default(Customer))
         {
             //no value in the cache yet
             //let's load customer and cache the result
             customer = GetCustomerById(customerId);
-            _cacheManager.Set(cacheKey, customer, 60);
 
-            ////Async
-            //await _cacheManager.SetAsync(cacheKey, customer, 60);
+            await _cacheManager.SetAsync(cacheKey, customer, 60);
+
+            //// sync
+            //_cacheManager.Set(cacheKey, customer, 60);
         }
+
         return Ok(customer);
     }
 
@@ -377,25 +377,24 @@ public class CustomerController : Controller
     /// <returns></returns>
     [HttpDelete]
     [Route("remove-all-cached")]
-    public IActionResult RemoveCachedCustomers()
+    public async Task<IActionResult> RemoveCachedCustomers()
     {
         //cacheable key
         var cacheKey = "customers";
 
-        _cacheManager.Remove(cacheKey);
+        await _cacheManager.RemoveAsync(cacheKey);
 
-        ////Async
-        //await _cacheManager.RemoveAsync(cacheKey);
+        //// sync
+        //_cacheManager.Remove(cacheKey);
 
 
-        // OR
+        // OR (may not work in web-farm scenario for some providers)
         var cacheKeyPattern = "customers-";
         // remove by pattern
-        _cacheManager.RemoveByPattern(cacheKeyPattern);
+        await _cacheManager.RemoveByPatternAsync(cacheKeyPattern);
 
-        ////Async
-        //await _cacheManager.RemoveByPatternAsync(cacheKeyPattern);
-
+        //// sync
+        //_cacheManager.RemoveByPattern(cacheKeyPattern);
 
         return Ok();
     }
@@ -406,12 +405,12 @@ public class CustomerController : Controller
     /// <returns></returns>
     [HttpDelete]
     [Route("clear-cached")]
-    public IActionResult ClearCachedItems()
+    public async Task<IActionResult> ClearCachedItems()
     {
-        _cacheManager.Clear();
+        await _cacheManager.ClearAsync();
 
-        ////Async
-        //await _cacheManager.ClearAsync();
+        //// sync
+        //_cacheManager.Clear();
 
         return Ok();
     }
