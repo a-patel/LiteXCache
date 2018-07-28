@@ -1,9 +1,9 @@
 # LiteXCache
 > LiteXCache is simple yet powerful and very high performance cache mechanism and incorporating both synchronous and asynchronous usage with some advanced usages of caching which can help us to handle caching more easier!
 
-> Provide Cache service for any type of application (.NET Core, .NET Standard).
+Provide Storage service for ASP.NET Core (2.0 and later) applications.
 
-Having a default/generic implementation to wrap the MemoryCache, Redis Cache, Memcached, SQLite, HTTP Request cache and independent on the underlying caching framework(s).
+Small library to abstract caching functionalities. Quick setup for any caching provider and very simple wrapper for widely used providers. LiteX Cache uses the least common denominator of functionality between the supported providers to build a caching solution. Abstract interface to implement any kind of basic caching services. Having a default/generic implementation to wrap the MemoryCache, Redis Cache, Memcached, SQLite, HTTP Request cache and independent on the underlying caching framework(s).
 
 Very simple yet advanced configuration. Easily migrate or switch between one to another provider with no code breaking changes. Minimal (one line) code configuration is required.
 
