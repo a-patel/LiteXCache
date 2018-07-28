@@ -5,17 +5,13 @@ Provide Storage service for ASP.NET Core (2.0 and later) applications.
 
 Small library to abstract caching functionalities. Quick setup for any caching provider and very simple wrapper for widely used providers. LiteX Cache uses the least common denominator of functionality between the supported providers to build a caching solution. Abstract interface to implement any kind of basic caching services. Having a default/generic implementation to wrap the MemoryCache, Redis Cache, Memcached, SQLite, HTTP Request cache and independent on the underlying caching framework(s).
 
-Very simple yet advanced configuration. Easily migrate or switch between one to another provider with no code breaking changes. Minimal (one line) code configuration is required.
+Very simple configuration in advanced ways. Purpose of this package is to bring a new level of ease to the developers who deal with different caching provider integration with their system and implements many advanced features. You can also write your own and extend it also extend existing providers. Easily migrate or switch between one to another provider with no code breaking changes.
 
-It supports various cache providers and implements many advanced features. You can also write your own and extend it also extend existing providers. 
+It provides possibility to upload files, upload the content of a folder inclusively subfolders, enumerate buckets/container, enumerate the content of a specific 'subfolder', delete buckets/container and delete files from specific subfolders. 
 
-LiteXCache is an interface to unify the programming model for various cache providers.
+LiteXCache is an interface to unify the programming model for various cache providers. The Core library contains all base interfaces and tools. One should install at least one other LiteXCache package to get caching mechanism implementation. 
 
-The Core library contains all base interfaces and tools. One should install at least one other LiateXCache package to get cache handle implementations.
-
-The main goal of the LiteXCache package is to make developer's life easier to handle even very complex caching scenarios.
-
-Better use of Http request cache for other external cache providers (Redis, Memcached, SQLite etc).
+Achieve significant performance by better use of Http request cache for other external cache providers (Redis, Memcached, SQLite etc).
 
 
 
