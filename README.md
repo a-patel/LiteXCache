@@ -7,8 +7,6 @@ Small library to abstract caching functionalities. Quick setup for any caching p
 
 Very simple configuration in advanced ways. Purpose of this package is to bring a new level of ease to the developers who deal with different caching provider integration with their system and implements many advanced features. You can also write your own and extend it also extend existing providers. Easily migrate or switch between one to another provider with no code breaking changes.
 
-It provides possibility to upload files, upload the content of a folder inclusively subfolders, enumerate buckets/container, enumerate the content of a specific 'subfolder', delete buckets/container and delete files from specific subfolders. 
-
 LiteXCache is an interface to unify the programming model for various cache providers. The Core library contains all base interfaces and tools. One should install at least one other LiteXCache package to get caching mechanism implementation. 
 
 Achieve significant performance by better use of Http request cache for other external cache providers (Redis, Memcached, SQLite etc).
