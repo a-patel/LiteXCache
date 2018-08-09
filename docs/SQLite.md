@@ -63,6 +63,11 @@ public class Startup
             EnableLogging = false,
         };
         services.AddLiteXSQLiteCache(sqLiteConfig);
+    }    
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+    {
+        //SQLite
+        app.UseLiteXSQLiteCache();
     }
 }
 ```
