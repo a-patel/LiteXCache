@@ -75,7 +75,12 @@ public class Startup
 
             // configure rest of the options as needed
         }, memcachedConfig);
-
+    }
+    
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+    {
+        //Memcached
+        app.UseLiteXMemcachedCache();
     }
 }
 ```
