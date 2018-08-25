@@ -10,9 +10,7 @@ Very simple configuration in advanced ways. Purpose of this package is to bring 
 Note: When you use this library, it means that you will handle the memory of current server.
 
 
-
 ## Basic Usage
-
 
 ### Install the package
 
