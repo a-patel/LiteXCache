@@ -12,13 +12,11 @@ LiteXCache is an interface to unify the programming model for various cache prov
 Achieve significant performance by better use of Http request cache for other external cache providers (Redis, Memcached, SQLite etc).
 
 
-
 ## Cache Providers :books:
 - [Redis](docs/Redis.md)
 - [InMemory](docs/InMemory.md)
 - [SQLite](docs/SQLite.md)
 - [Memcached](docs/Memcached.md)
-
 
 
 ## Features :pager:
@@ -36,9 +34,7 @@ Achieve significant performance by better use of Http request cache for other ex
 - Leverages a provider model on top of ILiteXCacheManager under the hood and can be extended with your own implementation
 
 
-
 ## Basic Usage :page_facing_up:
-
 
 ### Step 1 : Install the package :package:
 
