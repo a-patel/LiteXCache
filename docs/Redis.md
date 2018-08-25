@@ -10,7 +10,6 @@ Very simple configuration in advanced ways. Purpose of this package is to bring 
 
 ## Basic Usage
 
-
 ### Install the package
 
 > Install via [Nuget](https://www.nuget.org/packages/LiteX.Cache.Redis/).
