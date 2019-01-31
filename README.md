@@ -451,6 +451,10 @@ public class CustomerController : Controller
 - [x] Remove
 - [x] Clear
 
+#### Coming soon
+- Obsolete sync methods
+- Multiple provider support (using provider factory)
+
 
 ---
 
