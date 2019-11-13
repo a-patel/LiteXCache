@@ -1,8 +1,6 @@
 ﻿#region Imports
-using LiteX.Cache.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.PlatformAbstractions;
 using Swashbuckle.AspNetCore.Examples;
 using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerUI;
@@ -28,13 +26,13 @@ namespace LiteXCache.Demo
         {
             services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc("v1", new Info
+                options.SwaggerDoc("v8", new Info
                 {
-                    Version = "v1",
+                    Version = "v8",
                     Title = "LiteX Cache",
                     Description = "LiteX Cache (InMemory, Redis, Memcached, SQLite)",
                     TermsOfService = "None",
-                    Contact = new Contact() { Name = "Aashish Patel", Email = "toaashishpatel@outlook.com", Url = "http://aashishpatel.co.nf/" },
+                    Contact = new Contact() { Name = "Aashish Patel", Email = "toaashishpatel@outlook.com", Url = "https://aashishpatel.netlify.com/" },
                     License = new License() { Name = "LiteX LICENSE", Url = "https://github.com/a-patel/LiteXCache/blob/master/LICENSE" }
                 });
 
@@ -88,7 +86,7 @@ namespace LiteXCache.Demo
 
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "LiteX Cache (V1)");
+                options.SwaggerEndpoint("/swagger/v8/swagger.json", "LiteX Cache (V8)");
                 options.DocumentTitle = "LiteX Cache";
                 options.DocExpansion(DocExpansion.None);
                 options.DisplayRequestDuration();
