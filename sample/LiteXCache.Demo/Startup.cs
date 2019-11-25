@@ -24,158 +24,158 @@ namespace LiteXCache.Demo
             services.AddLiteXCache();
 
 
-            // register another provider using factory (AmazonS3)
-            // 1. Use default configuration from appsettings.json's 'RedisConfig'
-            services.AddLiteXRedisCacheFactory();
+            //// register another provider using factory (AmazonS3)
+            //// 1. Use default configuration from appsettings.json's 'RedisConfig'
+            //services.AddLiteXRedisCacheFactory();
 
-            //OR
-            // 2. Load configuration settings using options.
-            services.AddLiteXRedisCacheFactory(option =>
-            {
-                option.RedisCachingConnectionString = "127.0.0.1:6379,ssl=False";
-                //option.PersistDataProtectionKeysToRedis = true;
-                option.EnableLogging = false;
-            }, providerName: "redis");
+            ////OR
+            //// 2. Load configuration settings using options.
+            //services.AddLiteXRedisCacheFactory(option =>
+            //{
+            //    option.RedisCachingConnectionString = "127.0.0.1:6379,ssl=False";
+            //    //option.PersistDataProtectionKeysToRedis = true;
+            //    option.EnableLogging = false;
+            //}, providerName: "redis");
 
-            //OR
-            // 3. Load configuration settings on your own.
-            // (e.g. appsettings, database, hardcoded)
-            var redisConfig2 = new RedisConfig()
-            {
-                RedisCachingConnectionString = "127.0.0.1:6379,ssl=False",
-                //PersistDataProtectionKeysToRedis = true
-                EnableLogging = false,
-            };
-            services.AddLiteXRedisCacheFactory(providerName: "redis", config: redisConfig2);
-
-
-            // TODO: register more providers using factory
-
-            #endregion
-
-            #region LiteX Caching (InMemory)
-
-            // 1. Use default configuration from appsettings.json's 'InMemoryConfig'
-            services.AddLiteXCache();
-
-            //or
-            // 2. load configuration settings using options.
-            services.AddLiteXCache(option =>
-            {
-                option.EnableLogging = false;
-            });
-
-            //OR
-            // 3. Load configuration settings on your own.
-            // (e.g. appsettings, database, hardcoded)
-            var inMemoryConfig = new InMemoryConfig()
-            {
-                EnableLogging = false,
-            };
-            services.AddLiteXCache(inMemoryConfig);
-
-            #endregion
-
-            #region LiteX Caching (Redis)
-
-            // 1. Use default configuration from appsettings.json's 'RedisConfig'
-            services.AddLiteXRedisCache();
-
-            //OR
-            // 2. Load configuration settings using options.
-            services.AddLiteXRedisCache(option =>
-            {
-                option.RedisCachingConnectionString = "127.0.0.1:6379,ssl=False";
-                //option.PersistDataProtectionKeysToRedis = true;
-                option.EnableLogging = false;
-            });
-
-            //OR
-            // 3. Load configuration settings on your own.
-            // (e.g. appsettings, database, hardcoded)
-            var redisConfig = new RedisConfig()
-            {
-                RedisCachingConnectionString = "127.0.0.1:6379,ssl=False",
-                //PersistDataProtectionKeysToRedis = true
-                EnableLogging = false,
-            };
-            services.AddLiteXRedisCache(redisConfig);
-
-            #endregion
+            ////OR
+            //// 3. Load configuration settings on your own.
+            //// (e.g. appsettings, database, hardcoded)
+            //var redisConfig2 = new RedisConfig()
+            //{
+            //    RedisCachingConnectionString = "127.0.0.1:6379,ssl=False",
+            //    //PersistDataProtectionKeysToRedis = true
+            //    EnableLogging = false,
+            //};
+            //services.AddLiteXRedisCacheFactory(providerName: "redis", config: redisConfig2);
 
 
-            #region LiteX Caching (SQLite)
+            //// TODO: register more providers using factory
 
-            // 1. Use default configuration from appsettings.json's 'SQLiteConfig'
-            services.AddLiteXSQLiteCache();
+            //#endregion
 
-            //OR
-            // 2. Load configuration settings using options.
-            services.AddLiteXSQLiteCache(option =>
-            {
-                option.FileName = "";
-                option.FilePath = "";
-                option.OpenMode = Microsoft.Data.Sqlite.SqliteOpenMode.ReadWriteCreate;
-                option.CacheMode = Microsoft.Data.Sqlite.SqliteCacheMode.Default;
-                option.EnableLogging = false;
-            });
+            //#region LiteX Caching (InMemory)
 
-            //OR
-            // 3. Load configuration settings on your own.
-            // (e.g. appsettings, database, hardcoded)
-            var sqLiteConfig = new SQLiteConfig()
-            {
-                FileName = "",
-                FilePath = "",
-                OpenMode = Microsoft.Data.Sqlite.SqliteOpenMode.ReadWriteCreate,
-                CacheMode = Microsoft.Data.Sqlite.SqliteCacheMode.Default,
-                EnableLogging = false,
-            };
-            services.AddLiteXSQLiteCache(sqLiteConfig);
+            //// 1. Use default configuration from appsettings.json's 'InMemoryConfig'
+            //services.AddLiteXCache();
 
-            #endregion
+            ////or
+            //// 2. load configuration settings using options.
+            //services.AddLiteXCache(option =>
+            //{
+            //    option.EnableLogging = false;
+            //});
+
+            ////OR
+            //// 3. Load configuration settings on your own.
+            //// (e.g. appsettings, database, hardcoded)
+            //var inMemoryConfig = new InMemoryConfig()
+            //{
+            //    EnableLogging = false,
+            //};
+            //services.AddLiteXCache(inMemoryConfig);
+
+            //#endregion
+
+            //#region LiteX Caching (Redis)
+
+            //// 1. Use default configuration from appsettings.json's 'RedisConfig'
+            //services.AddLiteXRedisCache();
+
+            ////OR
+            //// 2. Load configuration settings using options.
+            //services.AddLiteXRedisCache(option =>
+            //{
+            //    option.RedisCachingConnectionString = "127.0.0.1:6379,ssl=False";
+            //    //option.PersistDataProtectionKeysToRedis = true;
+            //    option.EnableLogging = false;
+            //});
+
+            ////OR
+            //// 3. Load configuration settings on your own.
+            //// (e.g. appsettings, database, hardcoded)
+            //var redisConfig = new RedisConfig()
+            //{
+            //    RedisCachingConnectionString = "127.0.0.1:6379,ssl=False",
+            //    //PersistDataProtectionKeysToRedis = true
+            //    EnableLogging = false,
+            //};
+            //services.AddLiteXRedisCache(redisConfig);
+
+            //#endregion
 
 
-            #region LiteX Caching (Memcached)
+            //#region LiteX Caching (SQLite)
 
-            // 1. Use default configuration from appsettings.json's 'MemcachedConfig'
-            services.AddLiteXMemcachedCache(providerOption =>
-            {
-                providerOption.Protocol = Enyim.Caching.Memcached.MemcachedProtocol.Binary;
-                providerOption.Servers = new System.Collections.Generic.List<Enyim.Caching.Configuration.Server>() { new Enyim.Caching.Configuration.Server() { Address = "", Port = 0 } };
+            //// 1. Use default configuration from appsettings.json's 'SQLiteConfig'
+            //services.AddLiteXSQLiteCache();
 
-                // configure rest of the options as needed
-            });
+            ////OR
+            //// 2. Load configuration settings using options.
+            //services.AddLiteXSQLiteCache(option =>
+            //{
+            //    option.FileName = "";
+            //    option.FilePath = "";
+            //    option.OpenMode = Microsoft.Data.Sqlite.SqliteOpenMode.ReadWriteCreate;
+            //    option.CacheMode = Microsoft.Data.Sqlite.SqliteCacheMode.Default;
+            //    option.EnableLogging = false;
+            //});
 
-            //OR
-            // 2. Load configuration settings using options.
-            services.AddLiteXMemcachedCache(providerOption =>
-            {
-                providerOption.Protocol = Enyim.Caching.Memcached.MemcachedProtocol.Binary;
-                providerOption.Servers = new System.Collections.Generic.List<Enyim.Caching.Configuration.Server>() { new Enyim.Caching.Configuration.Server() { Address = "", Port = 0 } };
+            ////OR
+            //// 3. Load configuration settings on your own.
+            //// (e.g. appsettings, database, hardcoded)
+            //var sqLiteConfig = new SQLiteConfig()
+            //{
+            //    FileName = "",
+            //    FilePath = "",
+            //    OpenMode = Microsoft.Data.Sqlite.SqliteOpenMode.ReadWriteCreate,
+            //    CacheMode = Microsoft.Data.Sqlite.SqliteCacheMode.Default,
+            //    EnableLogging = false,
+            //};
+            //services.AddLiteXSQLiteCache(sqLiteConfig);
 
-                // configure rest of the options as needed
-            }, option =>
-            {
-                option.PersistDataProtectionKeysToMemcached = true;
-                option.EnableLogging = false;
-            });
+            //#endregion
 
-            //OR
-            // 3. Load configuration settings on your own.
-            // (e.g. appsettings, database, hardcoded)
-            var memcachedConfig = new MemcachedConfig()
-            {
-                PersistDataProtectionKeysToMemcached = true,
-                EnableLogging = false,
-            };
-            services.AddLiteXMemcachedCache(providerOption =>
-            {
-                providerOption.Protocol = Enyim.Caching.Memcached.MemcachedProtocol.Binary;
-                providerOption.Servers = new System.Collections.Generic.List<Enyim.Caching.Configuration.Server>() { new Enyim.Caching.Configuration.Server() { Address = "", Port = 0 } };
 
-                // configure rest of the options as needed
-            }, memcachedConfig);
+            //#region LiteX Caching (Memcached)
+
+            //// 1. Use default configuration from appsettings.json's 'MemcachedConfig'
+            //services.AddLiteXMemcachedCache(providerOption =>
+            //{
+            //    providerOption.Protocol = Enyim.Caching.Memcached.MemcachedProtocol.Binary;
+            //    providerOption.Servers = new System.Collections.Generic.List<Enyim.Caching.Configuration.Server>() { new Enyim.Caching.Configuration.Server() { Address = "", Port = 0 } };
+
+            //    // configure rest of the options as needed
+            //});
+
+            ////OR
+            //// 2. Load configuration settings using options.
+            //services.AddLiteXMemcachedCache(providerOption =>
+            //{
+            //    providerOption.Protocol = Enyim.Caching.Memcached.MemcachedProtocol.Binary;
+            //    providerOption.Servers = new System.Collections.Generic.List<Enyim.Caching.Configuration.Server>() { new Enyim.Caching.Configuration.Server() { Address = "", Port = 0 } };
+
+            //    // configure rest of the options as needed
+            //}, option =>
+            //{
+            //    option.PersistDataProtectionKeysToMemcached = true;
+            //    option.EnableLogging = false;
+            //});
+
+            ////OR
+            //// 3. Load configuration settings on your own.
+            //// (e.g. appsettings, database, hardcoded)
+            //var memcachedConfig = new MemcachedConfig()
+            //{
+            //    PersistDataProtectionKeysToMemcached = true,
+            //    EnableLogging = false,
+            //};
+            //services.AddLiteXMemcachedCache(providerOption =>
+            //{
+            //    providerOption.Protocol = Enyim.Caching.Memcached.MemcachedProtocol.Binary;
+            //    providerOption.Servers = new System.Collections.Generic.List<Enyim.Caching.Configuration.Server>() { new Enyim.Caching.Configuration.Server() { Address = "", Port = 0 } };
+
+            //    // configure rest of the options as needed
+            //}, memcachedConfig);
 
             #endregion
 
