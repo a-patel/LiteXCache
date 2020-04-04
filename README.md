@@ -20,6 +20,7 @@ Achieve significant performance by better use of Http request cache for other ex
 
 
 ## Features :pager:
+- Multiple provider support (using provider factory)
 - Cache any type of data
 - Cache data for specific time
 - Distributed Cache
@@ -30,6 +31,7 @@ Achieve significant performance by better use of Http request cache for other ex
 - Guaranteed single evaluation of your factory delegate whose results you want to cache
 - Strongly typed generics based API. No need to cast your cached objects every time you retrieve them
 - Thread safe, concurrency ready
+- Obsolete sync methods
 - Interface based API to support the test driven development and dependency injection
 - Leverages a provider model on top of ILiteXCacheManager under the hood and can be extended with your own implementation
 
@@ -452,8 +454,10 @@ public class CustomerController : Controller
 - [x] Clear
 
 #### Coming soon
-- Obsolete sync methods
-- Multiple provider support (using provider factory)
+- .NET Standard 2.1 support
+- .NET 5.0 support
+- Remove sync methods
+
 
 
 ---
