@@ -1,11 +1,9 @@
 ﻿#region Imports
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Swashbuckle.AspNetCore.Examples;
-using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 #endregion
@@ -26,14 +24,14 @@ namespace LiteXCache.Demo
         {
             services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc("v8", new Info
+                options.SwaggerDoc("v8", new OpenApiInfo
                 {
                     Version = "v8",
                     Title = "LiteX Cache",
                     Description = "LiteX Cache (InMemory, Redis, Memcached, SQLite)",
-                    TermsOfService = "None",
-                    Contact = new Contact() { Name = "Aashish Patel", Email = "toaashishpatel@outlook.com", Url = "https://aashishpatel.netlify.com/" },
-                    License = new License() { Name = "LiteX LICENSE", Url = "https://github.com/a-patel/LiteXCache/blob/master/LICENSE" }
+                    TermsOfService = new Uri("https://github.com/a-patel/LiteXCache/blob/master/LICENSE"),
+                    Contact = new OpenApiContact() { Name = "Ashish Patel", Email = "toaashishpatel@gmail.com", Url = new Uri("https://aashishpatel.netlify.app/") },
+                    License = new OpenApiLicense() { Name = "LICENSE", Url = new Uri("https://github.com/a-patel/LiteXCache/blob/master/LICENSE") }
                 });
 
 
@@ -41,34 +39,14 @@ namespace LiteXCache.Demo
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 options.IncludeXmlComments(xmlPath);
-                //var filePath = Path.Combine(PlatformServices.Default.Application.ApplicationBasePath, $"LiteXCache.Demo.xml");
-                //options.IncludeXmlComments(filePath);
-                ////options.IncludeXmlComments(GetXmlCommentsPath());
+
+                //// Set the comments path for the Swagger JSON and UI. For all libraries
+                //var xmlFiles = Directory.GetFiles(AppContext.BaseDirectory, "*.xml", SearchOption.TopDirectoryOnly).ToList();
+                //xmlFiles.ForEach(xmlFile => options.IncludeXmlComments(xmlFile));
 
                 options.DescribeAllEnumsAsStrings();
                 options.IgnoreObsoleteProperties();
                 options.IgnoreObsoleteActions();
-
-                options.OperationFilter<AddFileParamTypesOperationFilter>(); //Register File Upload Operation Filter
-
-                #region Authorization
-
-                // Swagger 2.+ support
-                var security = new Dictionary<string, IEnumerable<string>>
-                {
-                    {"Bearer", new string[] { }},
-                };
-
-                options.AddSecurityDefinition("Bearer", new ApiKeyScheme
-                {
-                    Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
-                    Name = "Authorization",
-                    In = "header",
-                    Type = "apiKey"
-                });
-                options.AddSecurityRequirement(security);
-
-                #endregion
             });
 
 

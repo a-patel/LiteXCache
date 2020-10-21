@@ -186,6 +186,8 @@ namespace LiteXCache.Demo
 
             services.AddLiteXLogging();
 
+            services.AddHttpContextAccessor();
+
             services.AddControllers();
         }
 
@@ -201,11 +203,11 @@ namespace LiteXCache.Demo
 
             #region LiteX Caching
 
-            //Memcached
-            app.UseLiteXMemcachedCache();
+            ////Memcached
+            //app.UseLiteXMemcachedCache();
 
-            //SQLite
-            app.UseLiteXSQLiteCache();
+            ////SQLite
+            //app.UseLiteXSQLiteCache();
 
             #endregion
 
